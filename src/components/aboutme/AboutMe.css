@@ -1,0 +1,88 @@
+.about-me-section {
+  padding-top: 15rem;
+  padding-bottom: 5rem;
+  padding-right: 0;
+  padding-left: 0;
+  color: #494C3B;
+  font-family: 'Satoshi', sans-serif;
+}
+
+.about-me-title {
+  font-size: 2rem;
+  font-family: 'Satoshi Light', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  text-align: left;
+  padding-left: 5rem;
+  font-style: italic;
+  color: #494C3B;
+}
+
+.about-me-content {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content:space-around;
+
+}
+
+.about-me-image {
+  width: 900px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-left: -15rem; 
+}
+
+.about-me-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.about-me-text {
+  max-width: 700px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-left: -270px; 
+  margin-top: 0rem;
+  z-index: 2;
+}
+
+.highlight-text-colored {
+  color: #F1E9DC !important;
+}
+
+.highlight-no-wrap {
+  white-space: nowrap;
+}
+
+
+@media (max-width: 768px) {
+  .about-me-title {
+    padding-left: 0;
+    text-align: center;
+    font-size: 1.8rem;
+    padding-top: 7rem;
+  }
+
+  .about-me-content {
+    flex-direction: column;       
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .about-me-image {
+    width: 90%;                  
+    margin-left: 0;
+    align-self: center;
+  }
+
+  .about-me-text {
+    margin-left: 0;
+    padding: 0 1rem;            
+    text-align: left;
+    font-size: 1rem;             
+  }
+}

@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap');
+
+/* ===== responsive sizes ===== */
+:root {
+  --pick-size: clamp(3.8rem, 5.5vw, 6.5rem);
+  --seal-size: clamp(1.8rem, 5.5vw, 8.5rem);
+  --side-col-w: calc(var(--pick-size) + 0.5rem);
+  --row-max: 56rem;
+}
+
+/* --- DESKTOP (default) --- */
+.d-desktop { display: block; }
+.d-mobile  { display: none; }
+
+.decorate-section {
+  background: #F1E9DC;
+  color: #494C3B;
+  padding: 1.5rem 0 2.5rem;
+  font-family: 'Satoshi', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ===== row 1 — name input ===== */
+.row-name {
+  max-width: var(--row-max);
+  margin: 0 auto 0.75rem;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .4rem;
+}
+.row-name input {
+  width: min(26rem, 100%);
+  padding: .5rem .75rem;
+  border: 1px solid #c9b79f;
+  border-radius: .5rem;
+  background: #f4ebdf;
+}
+
+/* ===== row 2 — seals ===== */
+.row-seals {
+  max-width: var(--row-max);
+  margin: 0 auto 1rem;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, var(--seal-size));
+  justify-content: center;
+  align-items: center;
+  gap: calc(var(--seal-size) * .25);
+}
+.row-seals .pick {
+  width: var(--seal-size);
+  height: auto;
+}
+
+/* ===== row 3 — columns ===== */
+.row-cols {
+  max-width: var(--row-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: var(--side-col-w) 1fr var(--side-col-w);
+  align-items: start;
+  gap: 2rem;
+}
+.col.left-col, .col.right-col {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  gap: 1rem;
+  justify-items: center;
+}
+.col.left-col img,
+.col.right-col img {
+  width: var(--pick-size);
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* clickable items */
+.pick {
+  object-fit: contain;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform .12s ease;
+  transform-origin: center;
+}
+.pick:hover  { transform: scale(0.8); }
+.pick:active { cursor: grabbing; }
+
+/* ===== letter stage ===== */
+.stage {
+  position: relative;
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+  min-height: 22rem;
+}
+.stage-letter {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  pointer-events: none;
+  user-select: none;
+}
+.slot-text {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Butterfly Kids", cursive;
+  font-size: clamp(1.4rem, 4vw, 3.5rem);
+  color: #fff;
+  text-shadow: 0 .125rem .125rem rgba(0,0,0,.2);
+  pointer-events: none;
+}
+
+/* carry preview */
+.stage.carrying { cursor: crosshair; }
+.carry-preview {
+  position: absolute;
+  width: var(--pick-size);
+  height: auto;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: drop-shadow(0 .25rem .625rem rgba(0,0,0,.18));
+  opacity: .95;
+}
+
+/* placed item */
+.dec-it {
+  position: absolute;
+  transform-origin: center;
+  cursor: move;
+  user-select: none;
+}
+.dec-it img {
+  width: var(--pick-size);
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+.dec-it.active::after {
+  content: "";
+  position: absolute;
+  inset: -.5rem;
+  border: 1px dashed #bda98f;
+  border-radius: .75rem;
+  pointer-events: none;
+}
+
+/* remove button + handles */
+.dec-remove {
+  position: absolute;
+  top: -.9rem; right: -.9rem;
+  width: 1.5rem; height: 1.5rem;
+  border: none; border-radius: 50%;
+  background: #000c; color: #fff;
+  line-height: 1.5rem; text-align: center;
+  font-weight: 700; cursor: pointer;
+}
+.handle {
+  position: absolute;
+  width: 1rem; height: 1rem;
+  border-radius: 50%;
+  background: #f4ebdf;
+  border: 1px solid #c9b79f;
+  box-shadow: 0 .0625rem .125rem rgba(0,0,0,.2);
+}
+.handle-rotate { top: -1.4rem; left: 50%; transform: translateX(-50%); cursor: grab; }
+.handle-resize { right: -1.4rem; bottom: -1.4rem; cursor: nwse-resize; }
+
+/* actions */
+.actions {
+  display:flex;
+  justify-content:center;
+  margin-top:1rem;
+}
+.btn {
+  border: 1px solid #b84d2b;
+  background: transparent;
+  color: #b84d2b;
+  padding: .6rem 1rem;
+  border-radius: .5rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-.06rem); }
+
+
+
+.limit-message {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #494C3B; 
+  color: #F1E9DC;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 9999;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+.dec-it.touch-dragging {
+  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.7));
+  opacity: 0.9;
+  transition: filter 0.2s, opacity 0.2s;
+}
+
+
+/* --- MOBILE --- */
+@media (max-width: 48rem) {
+  /* esconder colunas laterais no mobile e manter só o stage */
+  .row-cols { grid-template-columns: 1fr; }
+  .left-col, .right-col { display: none !important; }
+
+  .d-desktop { display: none; }
+  .d-mobile  { display: block; }
+
+  /* carta no mobile */
+  .stage { max-width: 100%; min-height: 1rem; }
+  .stage-letter { width: min(94%, 30rem); }
+
+  /* picks menores */
+  :root {
+    --pick-size: clamp(2.4rem, 20vw, 4.4rem);
+    --seal-size: clamp(2.8rem, 22vw, 4.8rem);
+  }
+
+  /* mobile palette */
+  .mobile-palette {
+    max-width: var(--row-max);
+    margin: 1rem auto 0;
+    padding: 0 .75rem;
+  }
+  .mp-tabs {
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    margin-bottom: .5rem;
+  }
+  .mp-tab {
+    padding: .4rem .8rem;
+    border: 1px solid #c9b79f;
+    background: #f4ebdf;
+    color: #494C3B;
+    border-radius: .5rem;
+    font-weight: 600;
+  }
+  .mp-tab.active {
+    background: #e8dcc9;
+    border-color: #bda98f;
+  }
+
+  .mp-viewport {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .mp-arrow {
+    border: 1px solid #c9b79f;
+    background: #f4ebdf;
+    border-radius: .5rem;
+    width: 2rem; height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  /* carrossel: scroll horizontal com dedo e setas */
+  .mp-track-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    flex: 1;
+    padding: .25rem 0;
+  }
+  .mp-track-wrap::-webkit-scrollbar { display: none; }
+  .mp-track-wrap { scrollbar-width: none; }
+
+  .mp-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+    gap: .75rem;
+  }
+  .mp-track .pick {
+    width: var(--pick-size);
+    height: auto;
+  }
+ 
+  .stage,
+  .dec-it,
+  .handle {
+    touch-action: none;
+  }
+
+}

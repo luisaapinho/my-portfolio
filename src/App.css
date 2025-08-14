@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap');
+
+
+@font-face {
+  font-family: 'Gambarino';
+  src: '/assets/fonts/Gambarino-Regular.woff2';
+  font-weight: normal;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'Satoshi';
+  src:'/assets/fonts/Satoshi-Regular.woff2';
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: 'Satoshi';
+  src:'/assets/fonts/Satoshi-Bold.woff2';
+  font-weight: bold;
+  font-style: normal;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #F1E9DC;
+  height: 100%;
+  font-family: 'Satoshi', sans-serif;
+}
+:root { --divider-overlap: 6rem; } 
+
+.projects-divider{
+  display:block;
+  width:100vw;            
+  max-width:none;
+  line-height:0;
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);  
+  margin:0;
+  z-index:2;                      
 }
 
-.App-link {
-  color: #61dafb;
+
+.projects-divider.overlap-next{
+  transform: translateX(-50%) translateY(var(--divider-overlap));
+  margin-top: calc(-1 * var(--divider-overlap));
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.projects-divider.flipped{
+  transform: translateX(-50%) rotate(180deg);
+}
+.projects-divider.flipped.overlap-prev{
+  transform: translateX(-50%) rotate(180deg) translateY(var(--divider-overlap));
+  margin-bottom: calc(-1 * var(--divider-overlap));
+}
+
+
+@media (max-width: 48rem){
+  :root { --divider-overlap: 2rem; }
 }

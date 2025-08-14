@@ -1,0 +1,135 @@
+/* Secção – sem espaços */
+.contact-section {
+  background: #F1E9DC;
+  margin-top: -100px;
+  padding: 0;                 
+  color: #494C3B;
+  font-family: 'Satoshi', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Título à esquerda, sem gaps extra */
+.contact-title {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 9rem;            
+  text-align: left;
+  letter-spacing: 0;
+  font-size: 0.9rem;
+}
+
+
+.letter-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto; 
+  display: flex;
+  justify-content: center; 
+}
+
+/* Imagem sem estilo extra, só full-bleed */
+.letter-image {
+  display: block;
+  width: 100%;
+  max-width: 65vw; 
+  height: auto;
+  margin: 0 auto; 
+}
+
+/* Overlay ocupa toda a área da imagem */
+.letter-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;        
+  justify-content: center;    
+  pointer-events: none;       
+}
+
+/* Form “cru” (sem fundo), mas com estilos nos campos; usa absolute para posicionar fino */
+.letter-form {
+  position: absolute;         /* <— chave para posicionar sobre a carta */
+  width: min(40rem, 37vw);    /* controla largura do bloco do form */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  right: 30%;                
+  bottom: 20%;                
+  pointer-events: auto;       
+}
+
+/* Honeypot escondido */
+.letter-form .hp { display: none; }
+
+/* Footer só para alinhar */
+.form-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---- Inputs / Textarea / Botão (estilo dos campos) ---- */
+.lf-label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #6b5f50;
+  margin-bottom: 6px;
+}
+
+.lf-input,
+.lf-textarea {
+  width: 100%;
+  background: #f4ebdf;
+  border: 1px solid #c9b79f;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #494C3B;
+  outline: none;
+}
+
+.lf-input::placeholder,
+.lf-textarea::placeholder { color: #8a8276; }
+
+.lf-input:focus,
+.lf-textarea:focus {
+  border-color: #bda98f;
+  box-shadow: 0 0 0 2px #494C3B22;
+}
+
+.lf-to { margin-top: 10px; font-size: 13px; color: #6b5f50; }
+.lf-greeting { margin: 8px 0; font-size: 13px; color: #6b5f50; }
+
+.lf-footer { margin-top: 14px; display: flex; align-items: center; justify-content: space-between; }
+.lf-best { font-size: 13px; color: #6b5f50; }
+
+.lf-send {
+  border: 1px solid #b84d2b;
+  background: transparent;
+  color: #b84d2b;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.lf-send:hover { transform: translateY(-1px); }
+.lf-send:disabled { opacity: .6; cursor: not-allowed; }
+
+.lf-msg { margin-top: 10px; font-size: 14px; }
+.lf-msg.ok { color: #1f7a37; }
+.lf-msg.err { color: #b3261e; }
+
+/* Responsivo: em ecrãs pequenos, form mais largo e mais alto na carta */
+@media (max-width: 900px) {
+  .letter-form {
+    width: 86vw;
+    right: 7%;
+    bottom: 10%;
+  }
+}
