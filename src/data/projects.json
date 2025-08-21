@@ -2,6 +2,8 @@
     "projects": [
       {
         "title": "Clothes Online Store",
+        "year": 2022,
+        "type": "University Project",
         "cover": {
           "path": "../../assets/projects/clothes-store/cover.jpg",
           "alt": "Screenshot of clothes online store homepage featuring product grid and navigation menu"
@@ -36,15 +38,15 @@
             "alt": "Homepage design featuring hero section with photographer's signature work"
           },
           {
-            "path": "../../assets/projects/portfolio-design/image-01.jpg",
+            "path": "../../assets/projects/portfolio-design/image-01.png",
             "alt": "Complete homepage layout showing navigation, hero image, and introduction section"
           },
           {
-            "path": "../../assets/projects/portfolio-design/image-02.jpg",
+            "path": "../../assets/projects/portfolio-design/image-02.png",
             "alt": "Projects page displaying City of God movie poster and cinematography samples"
           },
           {
-            "path": "../../assets/projects/portfolio-design/image-03.jpg",
+            "path": "../../assets/projects/portfolio-design/image-03.png",
             "alt": "About me page with photographer biography and professional background"
           }
         ],
@@ -54,6 +56,8 @@
       },
       {
         "title": "Workspace on Lockdown - Escape Room",
+        "year": 2023,
+        "type": "University Project",
         "cover": {
           "path": "../../assets/projects/workspace-on-lockdown/cover.jpg",
           "alt": "Interactive challenge screen from educational JavaScript escape room game"
@@ -90,6 +94,8 @@
       },
       {
         "title": "Brazil Flights",
+        "year": 2023,
+        "type": "University Project",
         "cover": {
           "path": "../../assets/projects/brazil-flights/cover.jpg",
           "alt": "Landing page design for Brazil flights tracking dashboard application"
@@ -100,19 +106,19 @@
             "alt": "Homepage hero section with flight search functionality and Brazil map background"
           },
           {
-            "path": "../../assets/projects/brazil-flights/image-01.jpg",
+            "path": "../../assets/projects/brazil-flights/image-01.png",
             "alt": "Complete landing page showing features, testimonials, and call-to-action sections"
           },
           {
-            "path": "../../assets/projects/brazil-flights/image-02.jpg",
+            "path": "../../assets/projects/brazil-flights/image-02.png",
             "alt": "Dashboard interface displaying real-time flight data and interactive charts"
           },
           {
-            "path": "../../assets/projects/brazil-flights/image-03.jpg",
+            "path": "../../assets/projects/brazil-flights/image-03.png",
             "alt": "Interactive map of Brazil with flight route pins and destination markers"
           },
           {
-            "path": "../../assets/projects/brazil-flights/image-04.jpg",
+            "path": "../../assets/projects/brazil-flights/image-04.png",
             "alt": "User account settings page with profile customization options"
           }
         ],
@@ -122,6 +128,8 @@
       },
       {
         "title": "Good Mates",
+        "year": 2024,
+        "type": "University Project",
         "cover": {
           "path": "../../assets/projects/good-mates/cover.jpg",
           "alt": "Mobile app login screen with custom illustration and authentication options"
@@ -132,19 +140,19 @@
             "alt": "Welcome screen featuring custom illustration and login/register buttons"
           },
           {
-            "path": "../../assets/projects/good-mates/image-01.jpg",
+            "path": "../../assets/projects/good-mates/image-01.png",
             "alt": "Login interface with hand-drawn illustration and authentication choices"
           },
           {
-            "path": "../../assets/projects/good-mates/image-02.jpg",
+            "path": "../../assets/projects/good-mates/image-02.png",
             "alt": "Home dashboard showing shared household products and usage statistics"
           },
           {
-            "path": "../../assets/projects/good-mates/image-03.jpg",
+            "path": "../../assets/projects/good-mates/image-03.png",
             "alt": "User profile page displaying personal shared products and contribution history"
           },
           {
-            "path": "../../assets/projects/good-mates/image-04.jpg",
+            "path": "../../assets/projects/good-mates/image-04.png",
             "alt": "Product detail view with consumption tracking and sharing options"
           },
           {
@@ -158,6 +166,8 @@
       },
       {
         "title": "Lume",
+        "year": 2025,
+        "type": "University Project",
         "cover": {
           "path": "../../assets/projects/lume/cover.jpg",
           "alt": "Lume app onboarding screen with cooking-themed illustration and welcome message"
@@ -206,6 +216,8 @@
       },
       {
         "title": "Internship at E-goi",
+        "year": 2025,
+        "type": "Intership Project",
         "cover": {
           "path": "../../assets/projects/internship/cover.jpg",
           "alt": "E-goi company logo representing digital marketing internship experience"
@@ -216,7 +228,7 @@
             "alt": "E-goi brand logo and visual identity elements"
           },
           {
-            "path": "../../assets/projects/internship/image-01.jpg",
+            "path": "../../assets/projects/internship/image-01.png",
             "alt": "Custom e-book cover illustration featuring robot character with shopping cart"
           },
           {
@@ -224,19 +236,19 @@
             "alt": "Digital illustration design process showing sketches and final artwork development"
           },
           {
-            "path": "../../assets/projects/internship/image-03.jpg",
+            "path": "../../assets/projects/internship/image-03.png",
             "alt": "AI-generated marketing banner background for remarketing campaign"
           },
           {
-            "path": "../../assets/projects/internship/image-04.jpg",
+            "path": "../../assets/projects/internship/image-04.png",
             "alt": "Performance marketing banner with AI-enhanced visuals and call-to-action"
           },
           {
-            "path": "../../assets/projects/internship/image-05.jpg",
+            "path": "../../assets/projects/internship/image-05.png",
             "alt": "Product mockup created using AI photo manipulation and digital composition"
           },
           {
-            "path": "../../assets/projects/internship/image-06.jpg",
+            "path": "../../assets/projects/internship/image-06.png",
             "alt": "Redesigned website navigation menu with improved user interface elements"
           },
           {
@@ -250,6 +262,8 @@
       },
       {
         "title": "Olá",
+        "year": 2025,
+        "type": "Aside Project that I worked on during my internship at E-goi",
         "cover": {
           "path": "../../assets/projects/ola/cover.jpg",
           "alt": "Summer campaign illustration featuring ice creams on beach with Heartbrand logo"
@@ -260,19 +274,19 @@
             "alt": "Beach scene illustration with various ice cream products and Heartbrand logo centerpiece"
           },
           {
-            "path": "../../assets/projects/ola/image-01.jpg",
+            "path": "../../assets/projects/ola/image-01.jpeg",
             "alt": "Website banner mockup for restaurant partners featuring summer ice cream campaign"
           },
           {
-            "path": "../../assets/projects/ola/image-02.jpg",
+            "path": "../../assets/projects/ola/image-02.png",
             "alt": "Vertical banner design for Heartbrand summer campaign with 5 Summer Heroes products"
           },
           {
-            "path": "../../assets/projects/ola/image-03.jpg",
+            "path": "../../assets/projects/ola/image-03.png",
             "alt": "Horizontal banner layout showcasing summer ice cream collection for desktop display"
           },
           {
-            "path": "../../assets/projects/ola/image-04.jpg",
+            "path": "../../assets/projects/ola/image-04.png",
             "alt": "Mobile-optimized horizontal banner design for summer campaign promotion"
           }
         ],

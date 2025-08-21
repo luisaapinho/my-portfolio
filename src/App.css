@@ -15,6 +15,14 @@
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: 'Satoshi Light';
+  src:'/assets/fonts/Satoshi-Light.woff2';
+  font-weight: 300;
+  font-style: normal;
+}
+
 @font-face {
   font-family: 'Satoshi';
   src:'/assets/fonts/Satoshi-Bold.woff2';
@@ -28,6 +36,7 @@ html, body {
   background-color: #F1E9DC;
   height: 100%;
   font-family: 'Satoshi', sans-serif;
+  scroll-behavior: smooth;
 }
 :root { --divider-overlap: 6rem; } 
 

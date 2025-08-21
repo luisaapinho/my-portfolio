@@ -1,96 +1,139 @@
-// pages/ProjectPage.js
-import { useParams, Link, useLocation } from "react-router-dom";
-import { useEffect, useMemo } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import projectsData from "../data/projects.json";
-import "./ProjectPage.css"; // opcional
+import "./ProjectPage.css";
 
 export default function ProjectPage() {
   const { id } = useParams();
-  const location = useLocation();
-
-  // garantir scroll top quando navegas para um projeto
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location.pathname]);
-
-  // obter projeto pelo índice (ou podes mudar para slug no futuro)
-  const project = useMemo(() => {
-    const idx = Number(id);
-    if (!Number.isInteger(idx)) return null;
-    return projectsData.projects[idx] ?? null;
-  }, [id]);
-
-  // SEO básico: atualiza o título
-  useEffect(() => {
-    document.title = project ? `${project.title} · Portfolio` : "Projeto não encontrado · Portfolio";
-  }, [project]);
+  const navigate = useNavigate();
+  const idx = Number(id);
+  const project =
+    Number.isInteger(idx) && idx >= 0 && idx < projectsData.projects.length
+      ? projectsData.projects[idx]
+      : null;
 
   if (!project) {
     return (
       <section className="project-detail">
         <div className="container">
-          <p>Projeto não encontrado.</p>
-          <Link to="/" className="back-link">← Voltar</Link>
+          <p>Project not found.</p>
+          <Link to="/" className="back-link">← Back to Home</Link>
         </div>
       </section>
     );
   }
 
-  return (
-    <section className="project-detail">
-      <div className="container">
-        <nav className="project-nav">
-          <Link to="/" className="back-link">← Voltar</Link>
-          {project["github-link"] && (
-            <a
-              href={project["github-link"]}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="github-btn"
-            >
-              Ver no GitHub
-            </a>
-          )}
-        </nav>
+  // Determine the cover image for the header
+  const coverFromImages =
+    project.images?.find(img => /cover-?02\./i.test(img.path)) ||
+    project.images?.[0] ||
+    null;
 
+  const headerCover = coverFromImages || project.cover;
+  const headerCoverPath = headerCover.path;
+  const headerCoverAlt = headerCover.alt;
+
+  // Filter out the cover image from the gallery
+  const galleryImages = (project.images || []).filter(img => {
+    if (!coverFromImages) return true; 
+    return img.path !== coverFromImages.path; 
+  });
+
+  // Handle contact navigation manually
+  const goToContact = () => {
+    navigate("/"); // go home first
+    setTimeout(() => {
+      const el = document.getElementById("contact");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100); // small delay so home is mounted
+  };
+
+  return (
+    <article className="project-detail">
+      {/* --- Cover (full width) --- */}
+      <div className="project-cover-wrap">
+        <img
+          className="project-cover"
+          src={headerCoverPath}
+          alt={headerCoverAlt}
+        />
+      </div>
+
+      <div className="container">
+        {/* --- Line 1: Project Title --- */}
         <header className="project-header">
           <h1 className="project-title">{project.title}</h1>
         </header>
 
-        {/* tens HTML no description (ex.: link Behance), por isso uso innerHTML */}
-        <p
-          className="project-description"
-          dangerouslySetInnerHTML={{ __html: project.description }}
-        />
+        {/* --- Line 2: Two columns: description + metadata --- */}
+        <section className="project-body">
+          <div
+            className="project-description"
+            dangerouslySetInnerHTML={{ __html: project.description }}
+          />
 
-        {project.tools?.length > 0 && (
-          <ul className="project-tools">
-            {project.tools.map((tool) => (
-              <li key={tool}>{tool}</li>
-            ))}
-          </ul>
+          <aside className="project-meta">
+            <dl>
+              {project.year && (
+                <>
+                  <dt>YEAR:</dt><dd>{project.year}</dd>
+                </>
+              )}
+              {project.type && (
+                <>
+                  <dt>TYPE:</dt><dd>{project.type}</dd>
+                </>
+              )}
+              {!!project.tools?.length && (
+                <>
+                  <dt>TECH STACK:</dt>
+                  <dd>{project.tools.join(", ")}</dd>
+                </>
+              )}
+              {project["github-link"] && (
+                <>
+                  <dt>GITHUB-LINK:</dt>
+                  <dd>
+                    <a
+                      href={project["github-link"]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="meta-link"
+                    >
+                      {project["github-link"]}
+                    </a>
+                  </dd>
+                </>
+              )}
+            </dl>
+            <button onClick={goToContact} className="contact-cta">
+              CONTACT ME ↗
+            </button>
+          </aside>
+        </section>
+
+        {/* --- Line 3: Gallery title --- */}
+        {galleryImages.length > 0 && (
+          <h2 className="project-photos-title">Photos of the Project</h2>
         )}
 
-        <div className="project-gallery">
-          {/* capa */}
-          <img
-            src={project.cover.path}
-            alt={project.cover.alt}
-            className="project-cover"
-            loading="lazy"
-          />
-  
-          {project.images?.map((img, i) => (
-            <img
-              key={i}
-              src={img.path}
-              alt={img.alt}
-              className="project-image"
-              loading="lazy"
-            />
+        {/* --- Line 4: Gallery (one image per row, alt on hover) --- */}
+        <section className="project-gallery">
+          {galleryImages.map((img, i) => (
+            <div className="gallery-item" key={i}>
+              <img src={img.path} alt={img.alt} loading="lazy" />
+              <span className="img-alt">{img.alt}</span>
+            </div>
           ))}
-        </div>
+        </section>
+
+        {/* --- Close link --- */}
+        <nav className="detail-nav">
+          <Link to="/" className="back-link left">CLOSE↖</Link>
+          <Link to="/" className="back-link right">CLOSE↖</Link>
+        </nav>
       </div>
-    </section>
+    </article>
   );
 }

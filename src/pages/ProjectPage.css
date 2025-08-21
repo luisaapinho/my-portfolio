@@ -1,0 +1,182 @@
+    /* --- Font setup --- */
+
+
+    /* --- Colors --- */
+    :root {
+    --page-fg: #494C3B;
+    --page-bg: #F1E9DC;
+    --accent: #AF431C;
+    --rule: #C8B9A6;
+    }
+
+    .project-detail {
+    color: var(--page-fg);
+    background: var(--page-bg);
+    }
+
+    .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+    }
+
+    /* --- Cover (full width) --- */
+    .project-cover-wrap {
+    width: 100%;
+    overflow: hidden;
+    }
+    .project-cover {
+    width: 100%;
+    height: 61vh;
+    object-fit: cover;
+    }
+
+    /* --- Title (Line 1) --- */
+    .project-header {
+    padding: 2.5rem 0 1.25rem;
+    border-bottom: 0.2rem;
+    margin-bottom: 0.2rem;
+    }
+    .project-title {
+    margin: 0;
+    font-family: "Gambarino", serif;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    color: var(--accent);
+    text-align: left; 
+    }
+
+    /* --- Description + Meta (Line 2) --- */
+    .project-body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding: 0 0.5rem; 
+    }
+
+    .project-description {
+    line-height: 1.6;
+    padding-right: 1.5rem; 
+    border-right: 0.01rem solid var(--accent);
+    }
+
+    .project-meta {
+    padding-left: 1.5rem; 
+    }
+    .project-meta dt {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: var(--accent);
+    }
+    .project-meta dd {
+    margin: 0 0 0.5rem 0;
+    }
+    .meta-link {
+    color: var(--accent);
+    text-decoration: underline;
+    }
+    .contact-cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: var(--accent);
+    text-decoration: none;
+    background: none;      
+    border: none;          
+    font-size: 1rem;
+    cursor: pointer;       
+    padding: 0;          
+    transition: color 0.2s ease;
+    }
+
+    .contact-cta:hover {
+    color: #7a2f14; 
+    text-decoration: underline;
+    }
+
+
+    /* --- Gallery title (Line 3) --- */
+    .project-photos-title {
+    font-family: "Gambarino", serif;
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin: 2rem 0 1rem;
+    padding-bottom: .5rem;
+    }
+
+    /* --- Gallery (Line 4) --- */
+    .project-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    }
+    .gallery-item {
+    position: relative;
+    overflow: hidden;
+    }
+    .gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+    transform: scale(1.02);
+    }
+    /* Alt overlay shown on hover */
+    .img-alt {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    }
+    .gallery-item:hover .img-alt {
+    opacity: 1;
+    }
+
+
+    /* --- Fixed close links at the top --- */
+.detail-nav {
+  position: fixed;
+  top: 1rem; 
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  z-index: 999; 
+  pointer-events: none; 
+}
+
+.detail-nav .back-link {
+  font-family: 'Satoshi Light';
+  font-size: 2.3rem; 
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+  pointer-events: auto; 
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.detail-nav .back-link:hover {
+  color: var(--page-fg);
+  transform: scale(1.1);
+}
+
+
+.detail-nav .back-link.left {
+  margin-left: 2rem;   
+}
+
+.detail-nav .back-link.right {
+  margin-right: 2rem;  
+}
