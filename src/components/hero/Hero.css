@@ -184,15 +184,6 @@
     }
   }
 
-/* ===== Scroll fix: prevent horizontal overflow ===== */
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden; /* disables horizontal scroll */
-}
-
-.hero-image-container,
-.hero-photo,
-.hero-canvas {
-  max-width: 100vw; 
+body {
+  overflow-x: hidden;
 }

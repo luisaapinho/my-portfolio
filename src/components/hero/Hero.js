@@ -163,7 +163,7 @@ export default function Hero() {
 
   return (
     <section className="hero-section">
-      <p className="open-for-work">OPEN FOR WORK</p>
+      <p className="open-for-work">OPEN TO WORK</p>
 
       <div className="hero-content">
         <div className="hero-text">
