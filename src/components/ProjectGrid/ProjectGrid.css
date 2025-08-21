@@ -50,27 +50,49 @@
 .arrow { margin-left: 0.3rem; }
 
 /* Mobile */
-@media (max-width: 48rem){
+@media (max-width: 60rem){
   .projects-section{ padding-top: 3rem; }
 
   .projects-title{
-    text-align:center;
-    padding-left:0;
-    margin:0 0 1rem 0;
-    font-size:1.8rem;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.8rem;
+    margin: 0 0 1rem 0;
   }
 
   .project-grid{
     grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 0 1rem;     
-    justify-items: center;
+    gap: 0;
+    padding: 0;
+    justify-items: stretch;
   }
 
-  .project-card:hover .project-image{ transform:none; }
+  .project-card{
+    width: 100vw;
+    /* initial state: straight; subtle lift so the enter animation feels smooth */
+    transform: rotate(0deg) translateY(0);
+    transition: transform 0.45s ease, box-shadow 0.3s ease;
+    will-change: transform;
+  }
+
+  
+  .project-card.in-view:nth-child(odd){
+    transform: rotate(4deg);
+  }
+  .project-card.in-view:nth-child(even){
+    transform: rotate(-3deg);
+  }
+
+  
+  .project-card:active{
+    transform: rotate(0deg) scale(0.985);
+  }
 
   .project-image{
-    max-width: 36rem;
-    margin-inline: auto;
+    display: block;
+    width: 105vw;      
+    max-width: none;
+    height: auto;
   }
 }

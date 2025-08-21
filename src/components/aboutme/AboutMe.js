@@ -47,7 +47,7 @@ export default function AboutMe() {
             </p>
 
             <p>
-              As shown in the gif on the left, I was born in{' '}
+              As shown in the gif, I was born in{' '}
               <HighlightText  noWrap delay={6 * delay} active={startAnimation}>São Paulo, Brazil</HighlightText>, where I was introduced to{' '}
               <RoughNotation type="underline" color="#AF431C" show={useSequentialShow(startAnimation, 7 * delay)}>art and performance</RoughNotation>{' '}
               from a very young age. I started working as a model at age 2 and spent much of my childhood doing theater. At 14, I moved to{' '}

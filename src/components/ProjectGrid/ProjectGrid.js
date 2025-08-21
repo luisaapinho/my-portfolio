@@ -1,9 +1,12 @@
 // components/ProjectGrid/ProjectGrid.jsx
 import projectsData from "../../data/projects.json";
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import "./ProjectGrid.css";
 
 export default function ProjectGrid() {
+  const cardRefs = useRef([]); // holds refs to all cards
+
   const saveHomeScroll = () => {
     sessionStorage.setItem("homeScrollY", String(window.scrollY));
   };
@@ -14,6 +17,32 @@ export default function ProjectGrid() {
       sessionStorage.setItem("homeScrollY", String(window.scrollY));
     }
   };
+
+  useEffect(() => {
+    // Only enable on mobile
+    const mq = window.matchMedia("(max-width: 60rem)");
+    if (!mq.matches) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target;
+          if (entry.isIntersecting) {
+            el.classList.add("in-view");
+            // If you want it to animate only once, unobserve:
+            // io.unobserve(el);
+          } else {
+            // Remove if you want the effect to toggle when leaving
+            el.classList.remove("in-view");
+          }
+        });
+      },
+      { threshold: 0.2 } // visible enough to trigger
+    );
+
+    cardRefs.current.forEach((el) => el && io.observe(el));
+    return () => io.disconnect();
+  }, []);
 
   return (
     <section className="projects-section">
@@ -27,6 +56,7 @@ export default function ProjectGrid() {
             aria-label={`View project: ${project.title}`}
             onClick={saveHomeScroll}
             onKeyDown={onKeyDownSave}
+            ref={(el) => (cardRefs.current[index] = el)}
           >
             <img
               src={project.cover.path}
