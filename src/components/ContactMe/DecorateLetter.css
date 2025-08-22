@@ -32,7 +32,7 @@
 .row-name input {
   width: min(26rem, 100%);
   padding: .5rem .75rem;
-  border: 1px solid #c9b79f;
+  border: 0.0625rem solid #c9b79f; /* 1px -> rem */
   border-radius: .5rem;
   background: #f4ebdf;
 }
@@ -146,7 +146,7 @@
   content: "";
   position: absolute;
   inset: -.5rem;
-  border: 1px dashed #bda98f;
+  border: 0.0625rem dashed #bda98f; /* 1px -> rem */
   border-radius: .75rem;
   pointer-events: none;
 }
@@ -166,7 +166,7 @@
   width: 1rem; height: 1rem;
   border-radius: 50%;
   background: #f4ebdf;
-  border: 1px solid #c9b79f;
+  border: 0.0625rem solid #c9b79f; /* 1px -> rem */
   box-shadow: 0 .0625rem .125rem rgba(0,0,0,.2);
 }
 .handle-rotate { top: -1.4rem; left: 50%; transform: translateX(-50%); cursor: grab; }
@@ -179,7 +179,7 @@
   margin-top:1rem;
 }
 .btn {
-  border: 1px solid #b84d2b;
+  border: 0.0625rem solid #b84d2b; /* 1px -> rem */
   background: transparent;
   color: #b84d2b;
   padding: .6rem 1rem;
@@ -190,8 +190,6 @@
 }
 .btn:hover { transform: translateY(-.06rem); }
 
-
-
 .limit-message {
   position: fixed;
   top: 10%;
@@ -199,50 +197,52 @@
   transform: translateX(-50%);
   background-color: #494C3B; 
   color: #F1E9DC;
-  padding: 10px 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
+  padding: 0.625rem 1.25rem; /* 10px 20px -> rem */
+  border-radius: 0.3125rem;  /* 5px -> rem */
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.1); /* 4px 8px -> rem */
+  font-size: 1rem; /* 16px -> rem */
   font-weight: bold;
   text-align: center;
   z-index: 9999;
   animation: fadeIn 0.5s ease-in-out;
 }
 
-
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
 
-
 .dec-it.touch-dragging {
-  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.7));
+  filter: drop-shadow(0 0 0.75rem rgba(255, 215, 0, 0.7)); /* 12px -> rem */
   opacity: 0.9;
   transition: filter 0.2s, opacity 0.2s;
 }
 
-
 /* --- MOBILE --- */
 @media (max-width: 48rem) {
-  /* esconder colunas laterais no mobile e manter só o stage */
+
+  .decorate-section {
+    background: #F1E9DC;
+    color: #494C3B;
+    padding: 1.5rem 0 2.5rem;
+    padding-top: 10rem;
+    font-family: 'Satoshi', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+
   .row-cols { grid-template-columns: 1fr; }
   .left-col, .right-col { display: none !important; }
 
   .d-desktop { display: none; }
   .d-mobile  { display: block; }
 
-  /* carta no mobile */
-  .stage { max-width: 100%; min-height: 1rem; }
+  .stage { max-width: 90%; min-height: 1rem; }
   .stage-letter { width: min(94%, 30rem); }
 
-  /* picks menores */
   :root {
     --pick-size: clamp(2.4rem, 20vw, 4.4rem);
     --seal-size: clamp(2.8rem, 22vw, 4.8rem);
   }
 
-  /* mobile palette */
   .mobile-palette {
     max-width: var(--row-max);
     margin: 1rem auto 0;
@@ -256,7 +256,7 @@
   }
   .mp-tab {
     padding: .4rem .8rem;
-    border: 1px solid #c9b79f;
+    border: 0.0625rem solid #c9b79f; /* 1px -> rem */
     background: #f4ebdf;
     color: #494C3B;
     border-radius: .5rem;
@@ -274,7 +274,7 @@
     gap: .5rem;
   }
   .mp-arrow {
-    border: 1px solid #c9b79f;
+    border: 0.0625rem solid #c9b79f; /* 1px -> rem */
     background: #f4ebdf;
     border-radius: .5rem;
     width: 2rem; height: 2rem;
@@ -283,7 +283,6 @@
     font-size: 1.2rem;
   }
 
-  /* carrossel: scroll horizontal com dedo e setas */
   .mp-track-wrap {
     overflow-x: auto;
     overflow-y: hidden;
@@ -305,11 +304,10 @@
     width: var(--pick-size);
     height: auto;
   }
- 
+
   .stage,
   .dec-it,
   .handle {
     touch-action: none;
   }
-
 }
