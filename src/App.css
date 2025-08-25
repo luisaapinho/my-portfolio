@@ -98,21 +98,10 @@ html, body {
 }
 
 .about-me-image {
- 
-  width: min(100%, 640px);
-  max-width: 100%;
-  min-width: 0;
 
-  margin-left: 0 !important;
-  padding-left: 0 !important;
+  margin-right: 0.2rem !important;
 }
 
-.about-me-image img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
 
 
 .projects-section {
@@ -136,7 +125,12 @@ html, body {
     grid-template-columns: 1fr;
   }
 
-
+  .about-me-image
+  .projects-section img,
+  .stage-letter {
+    max-width: 100%;
+    height: auto;
+  }
 
   
 }
@@ -173,12 +167,7 @@ html, body {
 }
 
 
-.about-me-section img,
-.projects-section img,
-.stage-letter {
-  max-width: 100%;
-  height: auto;
-}
+
 
 
 .content, .about-me-text, .projects-section, .project-card {
