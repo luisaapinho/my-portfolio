@@ -71,3 +71,108 @@ html, body {
 @media (max-width: 48rem){
   :root { --divider-overlap: 2rem; }
 }
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+#root { max-width: 100%; overflow-x: clip; }
+
+
+.about-me-section {
+  width: 100%;
+  overflow-x: clip;       
+  contain: paint;         
+}
+
+.about-me-content {
+  display: flex;
+  flex-wrap: wrap;        
+  gap: clamp(0.5rem, 2vw, 1.25rem);
+  align-items: flex-start;
+  max-width: 100%;
+  min-width: 0;           
+}
+
+.about-me-image {
+ 
+  width: min(100%, 640px);
+  max-width: 100%;
+  min-width: 0;
+
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.about-me-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.projects-section {
+  width: 100%;
+  overflow-x: clip;
+  contain: paint;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  gap: clamp(0.5rem, 2vw, 1rem);
+  padding: 0 clamp(0.75rem, 2vw, 2rem);
+  max-width: 100%;
+}
+
+@media (max-width: 720px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  display: block;           
+  min-width: 0;             
+  overflow: hidden;         
+  text-decoration: none;
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  will-change: transform;
+  transform-origin: center;
+}
+
+
+@media (hover: none) {
+  .project-card:hover .project-image {
+    transform: none !important;
+  }
+}
+
+
+.letter-image {
+  display: block;
+  width: 100%;
+  max-width: min(100%, 720px);
+  height: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.content, .about-me-text, .projects-section, .project-card {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

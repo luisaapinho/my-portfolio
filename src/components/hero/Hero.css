@@ -98,7 +98,7 @@
   }
   .draw-button {
     position: absolute;
-    bottom: -5rem;
+    bottom: -1rem;
     right: 3rem;
     background: none;
     color: #F1E9DC;
@@ -173,15 +173,11 @@
         margin-top: 1rem;
       }
   
-    .draw-button {
-      position: relative;
-      margin-top: 10rem;
-      z-index: 5;
-      right: 5%;
-      font-size: 1rem;
-      color: #F1E9DC;
-      text-align: center;
-    }
+ .draw-button {
+    font-size: 1.2rem; 
+    right: 3rem;     
+    bottom: -0.1rem;   
+  }
   }
 
 body {
