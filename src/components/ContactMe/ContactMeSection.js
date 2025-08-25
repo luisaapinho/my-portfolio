@@ -12,7 +12,7 @@ export default function ContactMeSection() {
       <div className="letter-wrapper">
         <img
           src="/assets/letter/open-letter.png"
-          alt="Envelope e cartão onde o formulário será sobreposto"
+          alt="Background letter illustration"
           className="letter-image"
         />
         <div className="letter-overlay">

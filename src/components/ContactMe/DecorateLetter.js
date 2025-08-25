@@ -340,7 +340,7 @@ export default function DecorateLetter() {
         style={{
         left: d.x,
         top: d.y,
-        zIndex: draggingId === d.id ? 999 : d.z || 1, // Eleva durante o drag
+        zIndex: draggingId === d.id ? 999 : d.z || 1,
         transform: `translate(-50%, -50%) rotate(${d.rot}rad) scale(${d.scale})`,
         }}
         onPointerDown={(e) => { 
@@ -348,7 +348,7 @@ export default function DecorateLetter() {
         bringToFront(d.id); 
         }}
     >
-    <img src={d.src} alt="Decoration" draggable={false} />
+    <img src={d.src} alt="Decoration" draggable={false} className="decor-img" />
     {selectedId === d.id && (
       <>
         <button

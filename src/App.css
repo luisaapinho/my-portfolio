@@ -129,10 +129,16 @@ html, body {
   max-width: 100%;
 }
 
+
+
 @media (max-width: 720px) {
   .project-grid {
     grid-template-columns: 1fr;
   }
+
+
+
+  
 }
 
 .project-card {
@@ -166,7 +172,10 @@ html, body {
   height: auto;
 }
 
-img {
+
+.about-me-section img,
+.projects-section img,
+.stage-letter {
   max-width: 100%;
   height: auto;
 }
