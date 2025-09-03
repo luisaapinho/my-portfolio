@@ -180,3 +180,88 @@
 .detail-nav .back-link.right {
   margin-right: 2rem;  
 }
+
+
+@media (max-width: 768px) {
+
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0rem 1.25rem;
+  }
+
+  /* 1) Smaller cover on phones */
+  .project-cover {
+    /* Shorter hero on small screens */
+    height: clamp(28vh, 52vw, 42vh);
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* 2) Reorder: META first, then DESCRIPTION */
+  .project-body {
+    grid-template-columns: 1fr;            /* single column */
+    grid-template-areas:
+      "meta"                                /* show META first */
+      "desc";                               /* then DESCRIPTION */
+    gap: 0.1rem;
+    margin-bottom: 1.25rem;                 /* tighter spacing */
+    padding: 0;                             /* remove side padding add-on */
+  }
+
+  /* Tidy META block for small screens */
+  .project-meta {
+    padding-left: 0;
+    border-bottom: 1px solid var(--rule);   /* visual separation */
+    padding-bottom: 0.75rem;
+  }
+  .project-meta dt {
+    color: var(--accent);
+    font-weight: 700;
+    margin-top: 0.25rem;
+    font-size: 0.98rem;
+  }
+  .project-meta dd {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.98rem;
+  }
+
+  /* 3) Description after META, readable and never truncated */
+  .project-description {
+    padding-right: 0;
+    border-right: 0;
+    padding-top: 0.75rem;
+    white-space: normal;        /* multi-line text */
+    overflow: visible;          /* avoid clipping */
+    text-overflow: clip;        /* no ellipsis */
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  /* 4) Gallery and heading spacing */
+  .project-photos-title {
+    font-size: 1.4rem;
+    margin: 1rem 0 0.75rem;
+    padding-bottom: 0.25rem;
+  }
+  .project-gallery { gap: 1rem; }
+  .gallery-item img { border-radius: 6px; }
+
+  /* Keep fixed nav from overlapping content */
+  .detail-nav {
+    top: max(0.5rem, env(safe-area-inset-top));
+    padding: 0 0.5rem;
+  }
+  .detail-nav .back-link {
+    font-size: 1.6rem;
+  }
+
+  .project-header {
+    padding: 0rem 0 1.25rem;
+    border-bottom: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+  
+}

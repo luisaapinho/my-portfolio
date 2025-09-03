@@ -21,7 +21,7 @@
       ],
       "tools": ["Midjourney", "Notion", "Figma", "Adobe Photoshop"],
       "github-link": null,
-      "description": "At E-goi, I worked on the creation of digital content for performance marketing and social media..."
+      "description": "At E-goi, I worked on the creation of digital content for performance marketing and social media, including ad banners, AI-generated visuals, illustrations, and photo manipulation. I also conducted 5-second tests, A/B testing, and performance analysis on Instagram, along with KPI reviews and competitive research. This experience gave me insight into the challenge brands face to remain relevant in a fast-paced digital world — a lesson that shaped me both professionally and personally."
     },
     {
       "title": "Olá",
@@ -40,7 +40,7 @@
       ],
       "tools": ["Figma"],
       "github-link": null,
-      "description": "During my internship at E-goi, I had the opportunity to collaborate on a summer campaign for Olá..."
+      "description": "During my internship at E-goi, I had the opportunity to collaborate on a summer campaign for Olá (Heartbrand), promoting their top-selling ice creams — the so-called '5 Summer Heroes.' I created the entire illustration by hand, following the Heartbrand's visual identity guidelines, and designed all versions of the campaign banners in Figma. These assets were adapted for desktop and mobile, and used across multiple channels: websites, emails, and digital ads aimed at restaurants and business partners. This project was a great opportunity to apply brand consistency within a commercial campaign, balancing creativity with clear marketing goals."
     },
     {
       "title": "Lume",
@@ -52,18 +52,18 @@
       },
       "images": [
         { "path": "../../assets/projects/lume/cover-02.png", "alt": "App introduction screen with personalized cooking journey setup" },
-        { "path": "../../assets/projects/lume/image-01.jpg", "alt": "Login page with cooking-themed illustrations and social authentication options" },
-        { "path": "../../assets/projects/lume/image-03.jpg", "alt": "Dashboard showing ongoing recipes, scheduled events, notes, and AI chat interface" },
-        { "path": "../../assets/projects/lume/image-04.jpg", "alt": "Interactive cooking mode with step-by-step instructions and timer interface" },
-        { "path": "../../assets/projects/lume/image-05.jpg", "alt": "Recipe discovery homepage with personalized filters and recommendation system" },
-        { "path": "../../assets/projects/lume/image-07.jpg", "alt": "Onboarding personalization flow for dietary preferences and cooking skills" },
-        { "path": "../../assets/projects/lume/image-08.jpg", "alt": "AI cooking assistant introduction screen with interactive chat preview" },
-        { "path": "../../assets/projects/lume/image-09.jpg", "alt": "Gamification system showing achievement badges and cooking milestones" },
-        { "path": "../../assets/projects/lume/image-10.jpg", "alt": "Chat interface with AI cooking assistant providing personalized recipe suggestions" }
+        { "path": "../../assets/projects/lume/image-01.png", "alt": "Login page with cooking-themed illustrations and social authentication options" },
+        { "path": "../../assets/projects/lume/image-03.png", "alt": "Dashboard showing ongoing recipes, scheduled events, notes, and AI chat interface" },
+        { "path": "../../assets/projects/lume/image-04.png", "alt": "Interactive cooking mode with step-by-step instructions and timer interface" },
+        { "path": "../../assets/projects/lume/image-05.png", "alt": "Recipe discovery homepage with personalized filters and recommendation system" },
+        { "path": "../../assets/projects/lume/image-07.png", "alt": "Onboarding personalization flow for dietary preferences and cooking skills" },
+        { "path": "../../assets/projects/lume/image-08.png", "alt": "AI cooking assistant introduction screen with interactive chat preview" },
+        { "path": "../../assets/projects/lume/image-09.png", "alt": "Gamification system showing achievement badges and cooking milestones" },
+        { "path": "../../assets/projects/lume/image-10.png", "alt": "Chat interface with AI cooking assistant providing personalized recipe suggestions" }
       ],
       "tools": ["React Native", "Firebase", "MongoDB", "Figma", "Protopie", "Adobe AfterEffects", "Node.js", "GitLab", "Whimsical", "Notion"],
       "github-link": "https://gitlab.com/esmad/esmapp/esmad-2425/group-8/culinaryquest",
-      "description": "This was one of the most challenging and complete projects I've worked on..."
+      "description": "This was one of the most challenging and complete projects I've worked on. We created a mobile app to help young people build healthier eating habits through meal planning, guided cooking, and gamified motivation. I led the entire visual design, including the high-fidelity prototype, custom illustrations, animations, and front-end in React Native. We used tools like Figma, Protopie, After Effects, Firebase, MongoDB, and Node.js to build a rich, user-focused experience. You can see more about this project in my <a href='https://www.behance.net/gallery/217492373/Lume-Igniting-Social-Cooking-Experiences'>Behance</a>"
     },
     {
       "title": "Good Mates",
@@ -83,7 +83,7 @@
       ],
       "tools": ["Kotlin", "Firebase", "Notion", "Figma", "GitHub"],
       "github-link": "https://github.com/luisaapinho/Projeto-ECDI-PW",
-      "description": "In this team project, we developed a mobile app to manage shared household resources..."
+      "description": "In this team project, we developed a mobile app to manage shared household resources through a virtual pantry. I was responsible for the entire design process, from wireflows and wireframes to UI/UX design, illustrations, and the front-end implementation — including the profile configuration system. The app allows users to add, track, and consume shared products, with automated debt calculation and notifications for restocking. The interface was designed in Figma, and the app was developed using Kotlin, with a strong focus on usability and collaboration."
     },
     {
       "title": "Brazil Flights",
@@ -102,7 +102,7 @@
       ],
       "tools": ["Vue", "Vuetify", "Chart.js", "Mock API", "Canvas", "Figma", "GitHub"],
       "github-link": "https://github.com/luisaapinho/Projeto-ECDI-PW",
-      "description": "Developed in collaboration with a multidisciplinary team, this project involved building a dashboard..."
+      "description": "Developed in collaboration with a multidisciplinary team, this project involved building a dashboard to track live flights across Brazil. I was responsible for the entire visual design — including the landing page, color palette, typography, illustrations, and the design system in Figma. I also implemented the interactive map with pins and curated pop-up curiosities to enhance user engagement. Built with Vue.js, Vuetify, and Canvas, the platform combined real-time data with a user-friendly and visually rich interface."
     },
     {
       "title": "Workspace on Lockdown - Escape Room",
@@ -122,7 +122,7 @@
       ],
       "tools": ["HTML5", "CSS", "JavaScript", "Adobe AfterEffects", "GitHub", "Figma"],
       "github-link": "https://github.com/luisaapinho/ProjetoI",
-      "description": "This interdisciplinary project was developed during the second semester of my first year..."
+      "description": "This interdisciplinary project was developed during the second semester of my first year. Our objective was to create a gamified e-learning platform to help students learn JavaScript programming in a fun and engaging way. I was responsible for the entire visual design of the game, including the illustrations, UI composition, color palette, and typography, all crafted in Figma. I also contributed to the front-end development of the platform and implemented one of the game's interactive challenges — a memory game based on color sequences, designed to reinforce programming concepts through playful repetition. The platform featured elements such as leaderboards, a mascot, and interactive challenges to make the experience more dynamic. This project gave me valuable experience in combining education, visual storytelling, and interactivity, while collaborating in a multidisciplinary team."
     },
     {
       "title": "Clothes Online Store",
@@ -139,7 +139,7 @@
       ],
       "tools": ["HTML5", "CSS", "JavaScript", "GitHub"],
       "github-link": "https://github.com/pistashioz/Trabalho-pratico---TW",
-      "description": "This was my very first university project..."
+      "description": "This was my very first university project, developed in a team during the Web Technologies course. Our goal was to design and build a fully functional website using HTML, CSS, and JavaScript — applying the fundamentals of web development in a real-world context. I was mainly responsible for the JavaScript implementation, as well as the logo and overall visual design of the site. Although I can now identify many areas I'd approach differently, I choose to include this project because it marks the starting point of my journey. It reflects my early understanding of core web technologies, and most importantly, shows how far I've come since then. After all, everyone starts somewhere."
     },
     {
       "title": "Portfolio Design",
@@ -157,7 +157,7 @@
       ],
       "tools": ["Figma"],
       "github-link": null,
-      "description": "This individual project involved designing a personal webpage..."
+      "description": "This individual project involved designing a personal webpage that showcased a portfolio. The theme was open-ended, allowing us to assume any profession we wanted. I chose a design that reflects a professional persona in filmmaking. The project was fully developed using Figma, leveraging its design and prototyping features to create interactive elements."
     }
   ]
 }
